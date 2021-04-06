@@ -8,10 +8,14 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    @*<link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">*@
 
 
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    
+    
 </head>
 <body>
     <header>
@@ -32,6 +36,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Transaction" asp-action="Index">Transaction</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Drink" asp-action="List">Drinks</a>
                         </li>
                     </ul>
 
@@ -77,6 +84,10 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     <script src="~/js/notify.min.js"></script>
+    @*<script src="~/lib/jquery/dist/jquery.js"></script>*@
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    @*<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>*@
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

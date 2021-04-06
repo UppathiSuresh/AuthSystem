@@ -1,4 +1,6 @@
 ﻿using AuthSystem.Models;
+using DrinkAndGo.Data.Interfaces;
+using DrinkAndGo.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,16 +17,30 @@ namespace AuthSystem.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        //public HomeController(ILogger<HomeController> logger)
+        //{
+        //    _logger = logger;
+        //}
+
+        private readonly IDrinkRepository _drinkRepository;
+        public HomeController(IDrinkRepository drinkRepository)
         {
-            _logger = logger;
+            _drinkRepository = drinkRepository;
         }
 
-
+        //public ViewResult Index()
         public IActionResult Index()
         {
-            return View();
+            var homeViewModel = new HomeViewModel
+            {
+                PreferredDrinks = _drinkRepository.PreferredDrinks
+            };
+            return View(homeViewModel);
         }
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
 
         public IActionResult Privacy()
         {
